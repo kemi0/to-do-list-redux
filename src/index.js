@@ -4,10 +4,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
+import promise from 'redux-promise';
 import App from './components/app';
 
 // setting the store state of our application
-const store = createStore(rootReducer, {}, applyMiddleware());
+const store = createStore(rootReducer, {}, applyMiddleware(promise));
 
 // wrap provider inside router
 ReactDOM.render(
@@ -18,3 +19,5 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+//successfullly added list to dom with component did mount and added promise from npm  
