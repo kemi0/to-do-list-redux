@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getListData } from '../actions'
+import { Link } from 'react-router-dom';
+import { getListData } from '../actions';
 
 class List extends Component {
             // everything in connect able to be called by props
@@ -13,10 +14,15 @@ class List extends Component {
 
         const listItems = listData.map((item, index) => {
              // this item comes from the map item above // just a call back function
-        return  <li className="collection-item" key={item._id}>{item.title}</li>
-})
+            return  <li className="collection-item" key={item._id}>{item.title}</li>
+        });
+
         return (
             <div>
+                <h1 className="center"> To-Do-List</h1>
+                     <div className="row right_align">
+                         <Link className="btn blue-grey" to="/add-item">Add Item</Link>
+                     </div>
                <ul className="collection">
                 {listItems}
                </ul>
