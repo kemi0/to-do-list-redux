@@ -27,3 +27,21 @@ export function addToDoItem(item){
     }
 }
 
+// wednesday creating a new action for id 
+export function getSingleItem(id){
+    const response = axios.get(`${BASE_URL}/todos/${id + API_KEY}`);
+
+    return {
+        type: types.GET_SINGLE_ITEM,
+        payload: response
+    }
+}
+
+
+
+//to toggele complete of an item 1st
+// axios.put(`${BASE_URL}/todos/${id + API_KEY}`);
+
+
+// to delete an item 
+// axios.delete(`${BASE_URL}/todos/${id + API_KEY}`);
