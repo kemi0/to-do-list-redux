@@ -9,8 +9,9 @@ const DEFAULT_STATE = {
 export default (state = DEFAULT_STATE, action) => {
     switch( action.type ) {
         case types.GET_LIST_DATA:
-            console.log('get list data action', action);
-            return {...state, all:action.payload.data.todos};
+           return {...state, all:action.payload.data.todos};
+            // console.log('get list data action', action);
+            
         case types.GET_SINGLE_ITEM:
         //  destructor the object to keep the state in complete piece
             return {...state, single: action.payload.data.todo};
